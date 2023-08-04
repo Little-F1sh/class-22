@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delect</title>
+</head>
+<body>
+    <section>
+        <h1>Delete our system</h1>
+        <h3 id="secret">our secret names</h3>
+        <input id="delete-confirmation">
+        <button disabled id="delete">Delete</button>
+    </section>
+
+
+
+
+
+    <script>
+        // document.querySelector("#delete-confirmation").addEventListener('focus', function() {
+        //     document.body.style.backgroundColor = 'red';
+        // })
+
+        // document.querySelector("#delete-confirmation").addEventListener('blur', function() {
+        //     document.body.style.backgroundColor = 'red';
+        // })
+
+        // document.querySelector("#delete-confirmation").addEventListener('keydown', function() {
+        //     document.body.style.backgroundColor = 'red';
+        // })
+        
+        // document.querySelector("#delete-confirmation").addEventListener('keypress', function() {
+        //     document.body.style.backgroundColor = 'red';
+        // })
+
+        // document.querySelector("#delete-confirmation").addEventListener('keyup', function() {
+        //     document.body.style.backgroundColor = 'red';
+        // })
+
+        // document.querySelector("#delete-confirmation").addEventListener('change', function() {
+        //     document.body.style.backgroundColor = 'red';
+        // })
+
+        document.querySelector("#delete-confirmation").addEventListener('keyup', function(event) {
+            const deleteField = event.target.value;
+
+            const dltBtn = document.querySelector('#delete');
+
+            if(deleteField == 'confirm') {
+                dltBtn.removeAttribute('disabled');
+                dltBtn.addEventListener('click', function(){
+                    document.querySelector('#secret'),style.display = 'none';
+                    event.target.value = '';
+                })
+            }else{
+                dltBtn.setAttribute('disabled', true);
+            }
+        })
+
+
+
+
+
+
+
+        document.querySelector("#delete").addEventListener("click", function() {
+            document.getElementById('secret').style.display = 'none'
+        })
+
+    </script>
+</body>
+</html>
